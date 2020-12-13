@@ -1,0 +1,67 @@
+.trends,
+.featured,
+.latest,
+.more{
+    &-container{
+        @include flex(flex, center, center, column, wrap);
+        width: 100%;
+        max-width: $max-width;
+        padding: 0 var(--gap);
+    }
+        //--------------------------
+        &__title{
+            @include f24();
+            width: 100%;
+            margin-bottom: 20px;
+            text-align: left;
+            text-transform: capitalize;
+        }
+        &__list{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-column-gap: 16px;
+            width: 100%;
+
+            @media(max-width: $mq6){
+                grid-template-columns: 1fr;
+                grid-row-gap: 8px;
+            }
+        }
+            &__item{
+                width: 100%;
+                position: relative;
+
+                &-picture{ width: 100%; }
+
+                &-bg{
+                    max-width: 100%;
+                    height: 700px;
+                    object-fit: cover;
+
+                    @media(max-width: $mq6){
+                        width: 100%;
+                        height: 500px;
+                        object-fit: cover;
+                        object-position: top;
+                    }
+                }
+                //--------------------------
+                &-info{
+                    position: absolute;
+                    bottom: 0;
+                    padding: 40px;
+                    @media(max-width: $mq6){ padding: 25px;}
+
+                }
+                    &-description{
+                        @include f20();
+                        margin-bottom: 20px;
+                        color: $white;
+                    }
+                    &-link{
+                        @include link();
+                        background-color: $white;
+                        color: $black;
+                    }
+            }
+}

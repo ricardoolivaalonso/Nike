@@ -1,0 +1,19 @@
+.featured{
+    &__list{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+        &__item{
+            &-description{
+                @include f72();
+                color: $black;
+                margin-bottom: 20px;
+            }
+            &-link{
+                @include link();
+                background-color: $black;
+                color: $white;
+            }
+            &-title{ @include f16(); }
+        }
+}

@@ -1,0 +1,166 @@
+.header{
+
+    position: sticky;
+    top: 0;
+
+    &-container{
+        @include flex(flex, space-between, center, row, nowrap);
+        width: 100%;
+        max-width: $max-width;
+        height: 100%;
+        padding: 0 var(--gap);
+    }
+        &__icon{
+            width: 60px;
+            object-fit: contain;
+        }
+}
+
+.main-menu{
+    display: flex;
+    height: 100%;
+    margin-left: 16%;
+
+    @media(max-width: $mq5){ display: none; }
+
+    &__list{ display: flex; }
+        &__item{
+            &:nth-last-of-type(1){ @media(max-width: $mq1){ display: none; } }
+            &:nth-last-of-type(2){ @media(max-width: $mq2){ display: none; } }
+            &:nth-last-of-type(3){ @media(max-width: $mq3){ display: none; } }
+            &:nth-last-of-type(4){ @media(max-width: $mq4){ display: none; } }
+
+            &:hover > .main-menu__mega{
+                visibility: visible;
+                opacity: 1;
+                transition: $transition;
+            }
+        }
+        &__link{
+            @include f16();
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 12px;
+            height: 100%;
+
+            border-top: 2px solid transparent;
+            border-bottom: 2px solid transparent;
+            transition: $transition;
+
+            &:hover{
+                border-bottom: 2px solid $black;
+                transition: $transition;
+            }
+        }
+    //------------------
+    &__mega{
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        padding: calc(var(--gap) / 2) var(--gap) var(--gap);
+
+        visibility: hidden;
+        opacity: 0;
+        transition: $transition;
+        background-color: $white;
+    }
+        &__sublist{
+            max-width: 200px;
+            margin: 0 20px;
+        }
+        &__sublink{
+            display: block;
+            @include f14();
+            line-height: 1.2;
+            color: $gray-font;
+            transition: $transition;
+            margin-bottom: 6px;
+
+            &:hover{
+                color: $black;
+                transition: $transition;
+            }
+            &--title{
+                @include f16();
+                margin-bottom: 12px;
+                color: $black;
+            }
+        }
+}
+.main-search{
+    display: flex;
+    position: relative;
+    right: -10px;
+
+    &__row{
+        height: 40px;
+        position: relative;
+
+        @media(max-width: $mq4){ display: none; }
+    }
+        &__icon{
+            width: 40px;
+            height: 40px;
+            padding: 6px;
+            margin-left: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+
+            &:hover{
+                background-color: darken($gray-bg, 10);
+                transition: $transition;
+            }
+
+            &--fixed{
+                position: absolute;
+                top: 0;
+                left: -10px;
+                background-color: $gray-bg;
+                transition: $transition;
+
+                &:hover{
+                    background-color: darken($gray-bg, 10);
+                    transition: $transition;
+                }
+            }
+
+            &--mob{
+                display: none;
+                @media(max-width: $mq5){ display: inherit; }
+            }
+        }
+        &__input{
+            @include f16();
+            width: 180px;
+            height: 40px;
+            border-radius: 40px;
+            padding-left: 45px;
+            padding-right: 20px;
+
+            background-color: $gray-bg;
+            color: darken($gray-bg, 15);
+            transition: $transition;
+
+            &::placeholder{
+                color: darken($gray-bg, 15);
+                transition: $transition;
+            }
+            &:focus::placeholder{
+                color: $black;
+                transition: $transition;
+            }
+            &:focus,
+            &:hover{
+                background-color: darken($gray-bg, 5);
+                color: $black;
+                transition: $transition;
+
+                + .main-search__icon{
+                    background-color: darken($gray-bg, 5);
+                }
+            }
+        }
+}

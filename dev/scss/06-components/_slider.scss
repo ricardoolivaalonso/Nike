@@ -1,0 +1,54 @@
+.slider{
+
+    &-container{
+        @include flex(flex, center, center, column, wrap);
+        width: 100%;
+        max-width: $max-width;
+        padding: 0 var(--gap) ;
+    }
+        &__title{
+            @include f24();
+            width: 100%;
+            margin-bottom: 20px;
+
+            text-align: left;
+            text-transform: lowercase;
+            &::first-letter{ text-transform: capitalize;}
+        }
+        //--------------------------
+        &__item{
+            &-img{
+                max-width: 100%;
+                object-fit: contain;
+                transition: $transition;
+
+                &:hover{
+                    cursor: pointer;
+                    opacity: .8;
+                    transition: $transition;
+                }
+            }
+            &-info{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            &-title{
+                @include f16();
+                margin-top: 5px;
+                line-height: 24px;
+            }
+            &-price{
+                margin-right: 20px;
+                @media(max-width: $mq5){
+                    display: none;
+                }
+            }
+            &-description{
+                @include f16();
+                margin-bottom: 40px;
+                color: $gray-font;
+                line-height: 24px;
+            }
+        }
+}

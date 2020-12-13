@@ -1,0 +1,40 @@
+doctype html
+html(lang="es", dir="ltr")
+    head
+        meta(name="viewport", content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0")
+        meta(charset="utf-8")     
+        meta(name="author", content="Ricardo Oliva Alonso")
+        meta(name="title", content="Ricardo Oliva Alonso | Desarrollador Web | Nike")
+        meta(name="description", content="Hola soy desarrollador web y esta página esta basada en Nike.")
+        meta(name="robots", content="index, follow")
+        title Ricardo Oliva Alonso | Desarrollador Web | Nike
+           
+        meta(name="theme-color", content="#111111")      
+        link(rel="stylesheet", href="css/styles.css")  
+        link(href="img/favicon.png", rel="shorcut icon", type="image/x-icon")
+            
+        link(rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css")
+        script(src="https://unpkg.com/swiper/swiper-bundle.min.js")
+        link(rel="preconnect" href="https://fonts.gstatic.com")
+        link(href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet")
+
+    body
+
+        include login
+        include header
+        include swiper
+        include banner
+        include trends
+        include featured
+        include latest
+        include slider
+        include more
+        include secondary-menu
+        include footer
+        
+        script( src="js/main.js", defer)
+    
+
+
+
+    

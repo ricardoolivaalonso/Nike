@@ -1,0 +1,17 @@
+.swiper{
+    &-container{
+        @include flex(flex, center, center, column, wrap);
+        width: 100%;
+        max-width: $max-width;
+        padding: 0 var(--gap);
+    }
+        &__title{
+            @include f14();
+            margin-bottom: 6px;
+        }
+        &__description{
+            @include f12();
+            text-align: center;
+            padding: 0 var(--gap);
+        }
+}

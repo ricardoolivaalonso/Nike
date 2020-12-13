@@ -1,0 +1,34 @@
+.login{
+    &-container{
+        @include flex(flex, space-between, center, row, nowrap);
+        width: 100%;
+        max-width: $max-width;
+        padding: 0 var(--gap);
+    }
+        &__icon{
+            width: 20px;
+            height: 20px;
+            object-fit: contain;
+        }
+        //--------------------------
+        &-menu{
+            display: flex;
+
+            &__item{
+                margin: 0 6px;
+
+                &:nth-of-type(1){ margin-left: 0; }
+                &:nth-last-of-type(1){ margin-right: 0; }
+            }
+            &__link{
+                @include f12();
+                transition: $transition;
+
+                &:hover{
+                    color: $gray-font; transition:
+                    $transition;
+                }
+                &--separator:hover{ color: inherit; }
+            }
+        }
+}

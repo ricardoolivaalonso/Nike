@@ -1,0 +1,29 @@
+/***** Colors *****/
+/******************/
+$black: #111111;
+$white: #ffffff;
+$gray-font: #757575;
+$gray-bg: #f5f5f5;
+$gray-footer: #7e7e7e;
+
+$transition: 250ms;
+/***** Queries *****/
+/******************/
+$mq1: 1330px;
+$mq2: 1250px;
+$mq3: 1170px;
+$mq4: 1090px;
+$mq5: 1010px;
+$mq6: 640px;
+/***** Units *****/
+/******************/
+$max-width: 1920px;
+
+:root{
+    --gap: 50px;
+    --pad: 50px;
+    --login: 36px;
+    --header: 60px;
+    --zindex: 10;
+    @media(max-width: $mq5){ --gap: 20px; }
+}

@@ -1,0 +1,16 @@
+.latest{
+    &__title{
+        text-transform: lowercase;
+        &::first-letter{ text-transform: capitalize;}
+    }
+    &__item{
+        &:nth-child(2){
+            .latest__item-description{ color: $black; }
+            .latest__item-link{
+                @include link();
+                background-color: $black;
+                color: $white;
+            }
+        }
+    }
+}
